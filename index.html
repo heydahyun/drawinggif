@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style media="screen">
+  body {
+    margin: 0px;
+    /* background: rgb(253, 29, 29);
+background: linear-gradient(180deg, rgba(253, 29, 29, 1) 50%, rgba(252, 241, 69, 1) 100%); */
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body>
+  <script>
+    let img;
+    let img1
+    let img2
+
+    function preload() {
+      img = loadImage('https://media.giphy.com/media/mI3J3e2v97T8Y/giphy.gif');
+      img1 = loadImage('https://media.giphy.com/media/d2YVxL2WFquFqWl2/giphy.gif');
+      img2 = loadImage('https://media.giphy.com/media/kn2GtngXJ3hZu/giphy.gif');
+      // img = loadImage('https://media.giphy.com/media/yTrcALesdjU5O/giphy.gif');
+      // img1 = loadImage('https://media.giphy.com/media/Q5idwzxmoRkBdiEVpu/giphy.gif');
+      // img2 = loadImage('https://media.giphy.com/media/HGvjR72DXRHWw/giphy.gif');
+    }
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight + 330, WEBGL);
+      // background(209,247,0);
+      // background(0);
+      // blendMode(SCREEN);
+      blendMode();
+      // background(255,255,255);
+      rectMode(LEFT);
+      noStroke();
+      fill(0);
+    }
+
+    function draw() {
+
+      // fill(0,0,0);
+      translate(-500, -500)
+      texture(img);
+      rect(width - mouseX, height - mouseY, 120, 180);
+
+      translate(-200, -200)
+      texture(img1);
+      // fill(50, 80, 200);
+      rect(mouseX, mouseY, 200, 190);
+
+      translate(-300, -300)
+      texture(img2);
+      // fill(20, 30, 100);
+      rect(mouseY, mouseX, 230, 240);
+    }
+  </script>
+</body>
+
+</html>
